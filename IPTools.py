@@ -26,9 +26,73 @@ print("[8] NMAP")
 print("[99] UPDATE IP-Tools")
 print("///////////////////")
 select = int(input("\u001b[33mCHOOSE: "))
+ping = '''
+888888  88 888    88 88888888
+8     8 88 88 8   88 88
+888888  88 88  8  88 88 88888
+8       88 88   8 88 88     8
+8       88 88    888 88888888
+'''
+netstat = '''
+888    88 8888888 88888888 8888888 88888888 8888888 88888888
+88 8   88 88         88    88         88    8     8    88
+88  8  88 88888      88    888888     88    8_____8    88
+88   8 88 88         88        88     88    8"""""8    88
+88    888 8888888    88    888888     88    8     8    88
+'''
+whoisx = '''
+88      88 88    88 8888888 88 888888
+88  88  88 88    88 8     8 88 88
+88  88  88 88888888 8     8 88 888888
+88  88  88 88    88 8     8 88     88
+8888888888 88    88 8888888 88 888888
+'''
+nsl = '''
+888    88   888888   88
+88 8   88   88       88
+88  8  88   888888   88
+88   8 88       88   88
+88    888 0 888888 0 8888888 0
+'''
+arp = '''
+8888888 8888888  888888
+8     8 8      8 8     8
+8_____8 8888888  888888
+8"""""8 8   8    8
+8     8 8    8   8
+'''
+d2i = '''
+888888   888888 88
+8     8 8     8 88
+8     8    88   88
+8     8   8     88
+888888   888888 88
+'''
+trace = '''
+88888888 8888888  8888888 8888888 8888888
+   88    8      8 8     8 88      88
+   88    8888888  8_____8 88      88888
+   88    8   8    8"""""8 88      88
+   88    8    8   8     8 8888888 8888888
+'''
+nmapx = '''
+888    88 888       888 8888888 888888
+88 8   88 88 8     8 88 8     8 8     8
+88  8  88 88  8   8  88 8_____8 888888
+88   8 88 88   8 8   88 8"""""8 8
+88    888 88    8    88 8     8 8
+'''
+update = '''
+88    88 888888  888888  8888888 88888888 8888888
+88    88 8     8 8     8 8     8    88    88
+88    88 888888  8     8 8_____8    88    88888
+88    88 8       8     8 8"""""8    88    88
+88888888 8       888888  8     8    88    8888888
+'''
 if select == 1:
     os.system('clear')
-    print("\u001b[36mPING EVERYTHING!")
+    print("\u001b[36m")
+    print(ping)
     print("/////////////////")
     print("[1] PING IP ADDRESS")
     print("[2] PING DOMAIN")
@@ -64,7 +128,7 @@ if select == 1:
         print("YOU SELECTED WRONG OPTION!!")
 elif select == 2:
     os.system('clear')
-    print("NETSTAT!!")
+    print(netstat)
     print("\u001b[32m=========")
     os.system('netstat -an')
     print("=========")
@@ -76,7 +140,8 @@ elif select == 2:
         print("OK.")
 elif select == 3:
     os.system('clear')
-    print("\u001b[34mWHOIS LOOKUP")
+    print("\u001b[34m")
+    print(whoisx)
     print("$$$$$$$$$$$$$$$$$$$$$$")
     whois = str(input("WRITE TARGET DOMAIN: "))
     os.system('whois '+whois)
@@ -89,7 +154,7 @@ elif select == 3:
         print("OK.")
 elif select == 4:
     os.system('clear')
-    print("Name Server Lookup")
+    print(nsl)
     print("¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥")
     nslookup = str(input("WRITE TARGET IP/DOMAIN: "))
     os.system('nslookup '+nslookup)
@@ -102,7 +167,8 @@ elif select == 4:
         print("OK.")
 elif select == 5:
     os.system('clear')
-    print("\u001b[35mADDRESS RESOLUTION PROTOCOL")
+    print("\u001b[35m")
+    print(arp)
     print("@@@@@@@@@@@@@@@@@@@@@@")
     os.system('arp')
     print("@@@@@@@@@@@@@@@@@@@@@@")
@@ -114,7 +180,8 @@ elif select == 5:
         print("OK.")
 elif select == 6:
     os.system('clear')
-    print("\u001b[36mDOMAIN TO IP ADDRESS")
+    print("\u001b[36m")
+    print(d2i)
     print("××××××××××××××××××××××××××××××")
     domain = str(input("WRITE TARGET DOMAIN: "))
     print(socket.gethostbyname(domain))
@@ -125,7 +192,8 @@ elif select == 6:
         os.system('python IPTools.py')
 elif select == 7:
     os.system('clear')
-    print("\u001b[35mTRACEROUTE")
+    print("\u001b[35m")
+    print(trace)
     print("€€€€€€€€€€€€€€€€€€€€")
     trace = str(input("WRITE TARGET DOMAIN: "))
     os.system('traceroute '+trace)
@@ -136,7 +204,8 @@ elif select == 7:
         os.system('python IPTools.py')
 elif select ==8:
     os.system('clear')
-    print("\u001b[32mNMAP NETWORK ANALYSIS")
+    print("\u001b[32m")
+    print(nmapx)
     print("oooooooooooooooooooooooooooo")
     print("[1] ALIVE HOST SCAN")
     print("[2] SIMPLE SCAN")
@@ -167,6 +236,7 @@ elif select ==8:
         os.system('clear')
         os.system('python IPTools.py')
 elif select == 99:
+    print(update)
     print("\u001b[32m[*] UPDATING IP-Tools...")
     os.system('git clone https://github.com/CYB3RMX/IP-Tools')
     print("[*] UPDATE COMPLETE.")
