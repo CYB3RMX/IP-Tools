@@ -1,19 +1,18 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
-import os,socket
-print("\u001b[33m") 
-print("           ) ( * )") 
-print("       ( ( /( ( ) )\ ) ( ` ( /(") 
-print("    )\ )\()) ( )\ ( /( (()/( )\))( )\())") 
-print("  (((_) ((_)\ )((_) )\()) /(_))((_)()\ ((_)\ ") 
-print(" )\__ __ ((_)((_)_ ((_)\ (_)) (_()((_)__((_)") 
-print("/ __|\ \ / /| _ )|__ (_| _ \ | \/ |\ \/ /") 
-print("| (__ \ V / | _ \ |_ \ | / | |\/| | >  <") 
-print("\___|  |_|  |___/|___/ |_|_\ |_||_|/_/\_\_____") 
-print("                                        |_____|")
-print("《                                       》")
-print("《  CYB3RMX_ PROGRAMMING & CYBERSECURITY 》")
-print("《                IP-Tools               》")
+import os,socket,telnetlib
+from telnetlib import Telnet
+os.system('clear')
+print("\u001b[32m")
+print("            ___ __   ______ ____ ____ __  ____  __")
+print("           / __|\ \ / /| _ )|__ (| _ \| \/ |\ \/ /")
+print("           | (__ \ V / | _ \ |_ \| / ||\/| | >  <")
+print("           \___|  |_|  |___/|___/|_|_\|_||_|/_/\_\___")
+print("\u001b[33m")
+print('         《"""""""""""""""""""""""""""""""""""""""""""》')
+print("         《    CYB3RMX_ PROGRAMMING & CYBERSECURITY   》")
+print("         《                  IP TOOLS                 》")
+print('         《___________________________________________》')
 print("\u001b[37m///////////////////")
 print("[1] PING")
 print("[2] NETSTAT")
@@ -23,7 +22,13 @@ print("[5] ARP")
 print("[6] DOMAIN TO IP ADDRESS")
 print("[7] TRACEROUTE")
 print("[8] NMAP")
-print("[99] UPDATE IP-Tools")
+print("[9] TELNET CONNECTION")
+print("[99] UPDATE IP-TOOLS")
+print("///////////////////")
+ipx = socket.gethostbyname(socket.gethostname())
+print("\u001b[36m")
+print(ipx)
+print("\u001b[0m")
 print("///////////////////")
 select = int(input("\u001b[33mCHOOSE: "))
 ping = '''
@@ -82,6 +87,13 @@ nmapx = '''
 88   8 88 88   8 8   88 8"""""8 8
 88    888 88    8    88 8     8 8
 '''
+telnet = '''
+88888888 8888888 88      888    88 8888888 88888888
+   88    88      88      88 8   88 88         88
+   88    88888   88      88  8  88 88888      88
+   88    88      88      88   8 88 88         88
+   88    8888888 8888888 88    888 8888888    88
+'''
 update = '''
 88    88 888888  888888  8888888 88888888 8888888
 88    88 8     8 8     8 8     8    88    88
@@ -106,6 +118,28 @@ if select == 1:
         print("=================")
         ret = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
         if ret == 1:
+            os.system('clear')
+            os.system('python IPTools.py')
+        else:
+            print("OK.")
+    elif pings == 2:
+        print("=================")
+        pingdo = str(input("WRITE TARGET DOMAIN: "))
+        os.system('ping '+pingdo)
+        print("=================")
+        ret1 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
+        if ret1 == 1:
+            os.system('clear')
+            os.system('python IPTools.py')
+        else:
+            print("OK.")
+    elif pings == 2:
+        print("=================")
+        pingdo = str(input("WRITE TARGET DOMAIN: "))
+        os.system('ping '+pingdo)
+        print("=================")
+        ret1 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
+        if ret1 == 1:
             os.system('clear')
             os.system('python IPTools.py')
         else:
@@ -183,13 +217,31 @@ elif select == 6:
     print("\u001b[36m")
     print(d2i)
     print("××××××××××××××××××××××××××××××")
-    domain = str(input("WRITE TARGET DOMAIN: "))
-    print(socket.gethostbyname(domain))
-    print("××××××××××××××××××××××××××××××")
-    ret6 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
-    if ret6 == 1:
-        os.system('clear')
-        os.system('python IPTools.py')
+    print("[1] NORMAL INFORMATION")
+    print("[2] DETAILED INFORMATION")
+    print("[0] RETURN BACK TO MAIN MENU")
+    d2isel = int(input("CHOOSE: "))
+    if d2isel == 1:
+       domain = str(input("WRITE TARGET DOMAIN: "))
+       print(socket.gethostbyname(domain))
+       print("××××××××××××××××××××××××××××××")
+       ret6 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
+       if ret6 == 1:
+          os.system('clear')
+          os.system('python IPTools.py')
+    elif d2isel == 2:
+       d2ihost = str(input("WRITE HOST ADDRESS: "))
+       d2iport = int(input("WRITE HOSTS PORT: "))
+       print(socket.gethostbyaddr(d2ihost))
+       print(socket.getaddrinfo(d2ihost,d2iport))
+       print("××××××××××××××××××××××××××××××")
+       ret6 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
+       if ret6 == 1:
+          os.system('clear')
+          os.system('python IPTools.py')
+    elif d2isel == 0:
+       os.system('clear')
+       os.system('python IPTools.py')
 elif select == 7:
     os.system('clear')
     print("\u001b[35m")
@@ -235,6 +287,15 @@ elif select ==8:
     else:
         os.system('clear')
         os.system('python IPTools.py')
+elif select == 9:
+    os.system('clear')
+    print("\u001b[36m")
+    print(telnet)
+    print("v^v^v^v^v^v^v^v^v^v^v^v")
+    telhost = str(input("WRITE HOST TO CONNECT: "))
+    telport = int(input("WRITE HOSTS PORT: "))
+    with Telnet(telhost,telport) as tn:
+        tn.interact()
 elif select == 99:
     print(update)
     print("\u001b[32m[*] UPDATING IP-Tools...")
