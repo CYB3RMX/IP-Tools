@@ -305,7 +305,7 @@ elif select == 10:
 elif select == 154:
     print(update)
     print("\u001b[32m[*] UPDATING IP-Tools...")
-    os.system('git clone https://github.com/CYB3RMX/IP-Tools')
+    os.system('git clone https://github.com/CYB3RMX/IP_TOOLS_FOR_TERMUX')
     print("[*] UPDATE COMPLETE.")
     os.system('python IPTools.py')
 else:
