@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-#-*- coding: utf-8 -*-
-import os,socket,telnetlib
+#-*- encoding: utf-8 -*-
+import os,socket,telnetlib,time
 from telnetlib import Telnet
 os.system('clear')
 print("\u001b[32m")
@@ -11,25 +11,29 @@ print("           \___|  |_|  |___/|___/|_|_\|_||_|/_/\_\___")
 print("\u001b[33m")
 print('         《"""""""""""""""""""""""""""""""""""""""""""》')
 print("         《    CYB3RMX_ PROGRAMMING & CYBERSECURITY   》")
+print("         《       ~~~~~MX Security Corporation~~~~~   》")
 print("         《                  IP TOOLS                 》")
 print('         《___________________________________________》')
-print("\u001b[37m///////////////////")
-print("[1] PING")
-print("[2] NETSTAT")
-print("[3] WHOIS")
-print("[4] NSLookup")
-print("[5] ARP")
-print("[6] DOMAIN TO IP ADDRESS")
-print("[7] TRACEROUTE")
-print("[8] NMAP")
-print("[9] TELNET CONNECTION")
-print("[99] UPDATE IP-TOOLS")
-print("///////////////////")
+print("\u001b[37m///////////////////////////////////////")
+print("[1]---------{ PING }")
+print("[2]---------{ NETSTAT }")
+print("[3]---------{ WHOIS }")
+print("[4]---------{ NSLookup }")
+print("[5]---------{ ARP }")
+print("[6]---------{ DOMAIN TO IP ADDRESS }")
+print("[7]---------{ TRACEROUTE }")
+print("[8]---------{ NMAP }")
+print("[9]---------{ TELNET CONNECTION }")
+print("[10]--------{ HYDRA PASSWORD CRACKER }")
+print("[154]--------{ UPDATE IP-TOOLS }")
+print("///////////////////////////////////////")
 ipx = socket.gethostbyname(socket.gethostname())
+time = time.asctime()
 print("\u001b[36m")
 print(ipx)
+print(time)
 print("\u001b[0m")
-print("///////////////////")
+print("////////////////////////")
 select = int(input("\u001b[33mCHOOSE: "))
 ping = '''
 888888  88 888    88 88888888
@@ -94,6 +98,13 @@ telnet = '''
    88    88      88      88   8 88 88         88
    88    8888888 8888888 88    888 8888888    88
 '''
+hydra = '''
+8     8 88    88 888888  8888888  8888888
+8     8  88  88  8     8 8      8 8     8
+8ooooo8    88    8     8 8888888  8_____8
+8     8    88    8     8 8   8    8"""""8
+8     8    88    888888  8    8   8     8
+'''
 update = '''
 88    88 888888  888888  8888888 88888888 8888888
 88    88 8     8 8     8 8     8    88    88
@@ -118,28 +129,6 @@ if select == 1:
         print("=================")
         ret = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
         if ret == 1:
-            os.system('clear')
-            os.system('python IPTools.py')
-        else:
-            print("OK.")
-    elif pings == 2:
-        print("=================")
-        pingdo = str(input("WRITE TARGET DOMAIN: "))
-        os.system('ping '+pingdo)
-        print("=================")
-        ret1 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
-        if ret1 == 1:
-            os.system('clear')
-            os.system('python IPTools.py')
-        else:
-            print("OK.")
-    elif pings == 2:
-        print("=================")
-        pingdo = str(input("WRITE TARGET DOMAIN: "))
-        os.system('ping '+pingdo)
-        print("=================")
-        ret1 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
-        if ret1 == 1:
             os.system('clear')
             os.system('python IPTools.py')
         else:
@@ -240,8 +229,8 @@ elif select == 6:
           os.system('clear')
           os.system('python IPTools.py')
     elif d2isel == 0:
-       os.system('clear')
-       os.system('python IPTools.py')
+        os.system('clear')
+        os.system('python IPTools.py')
 elif select == 7:
     os.system('clear')
     print("\u001b[35m")
@@ -266,7 +255,8 @@ elif select ==8:
     print("oooooooooooooooooooooooooooo")
     nmapsel = int(input("CHOOSE: "))
     if nmapsel == 1:
-        os.system('nmap 192.168.1.0/24')
+        nmaptarget = str(input("WRITE TARGET: "))
+        os.system('nmap '+nmaptarget)
         ret8 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
         if ret8 == 1:
             os.system('clear')
@@ -279,7 +269,8 @@ elif select ==8:
             os.system('clear')
             os.system('python IPTools.py')
     elif nmapsel == 3:
-        os.system('nmap 192.168.1.0/24 -sV -vv')
+        Nmaptarget = str(input("WRITE TARGET: "))
+        os.system("nmap ' ' -sV -vv "+Nmaptarget)
         ret10 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
         if ret10 == 1:
             os.system('clear')
@@ -296,10 +287,26 @@ elif select == 9:
     telport = int(input("WRITE HOSTS PORT: "))
     with Telnet(telhost,telport) as tn:
         tn.interact()
-elif select == 99:
+    ret11 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
+    if ret11 == 1:
+        os.system('clear')
+        os.system('python IPTools.py')
+elif select == 10:
+    os.system('clear')
+    print("\u001b[0m")
+    print(hydra)
+    print("+++++++++++++++++++++++")
+    hydra_target = str(input("ENTER THE TARGET: "))
+    os.system("hydra -l admin -P passx.txt ''"+hydra_target)
+    ret12 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
+    if ret12 == 1:
+        os.system('clear')
+        os.system('python IPTools.py')
+elif select == 154:
     print(update)
     print("\u001b[32m[*] UPDATING IP-Tools...")
     os.system('git clone https://github.com/CYB3RMX/IP-Tools')
     print("[*] UPDATE COMPLETE.")
+    os.system('python IPTools.py')
 else:
     print("\u001b[31mYOU SELECTED WRONG OPTION!!!")
