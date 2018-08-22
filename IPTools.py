@@ -292,6 +292,8 @@ elif select ==8:
           if nret == 1:
             os.system('clear')
             os.system('python IPTools.py')
+          elif nret == 0:
+              print("\u001b[31m[!] PROGRAM IS SHUTTING DOWN..")
           else:
             print("\u001b[31m[!] WRONG OPTION..")
         elif network == 2:
@@ -300,6 +302,8 @@ elif select ==8:
             if nret1 == 1:
               os.system('clear')
               os.system('python IPTools.py')
+            elif nret1 == 0:
+              print("\u001b[31m[!] PROGRAM IS SHUTTING DOWN..")
             else:
               print("\u001b[31m[!] WRONG OPTION..")
         elif network == 3:
@@ -308,6 +312,8 @@ elif select ==8:
             if nret2 == 1:
               os.system('clear')
               os.system('python IPTools.py')
+            elif nret2 == 0:
+              print("\u001b[31m[!] PROGRAM IS SHUTTING DOWN..")
             else:
               print("\u001b[31m[!] WRONG OPTION..")
         elif network == 4:
@@ -316,6 +322,8 @@ elif select ==8:
             if nret3 == 1:
               os.system('clear')
               os.system('python IPTools.py')
+            elif nret3 == 0:
+              print("\u001b[31m[!] PROGRAM IS SHUTTING DOWN..")
             else:
               print("\u001b[31m[!] WRONG OPTION..")
         ret8 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
