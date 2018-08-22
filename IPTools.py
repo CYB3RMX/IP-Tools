@@ -24,20 +24,25 @@ print("\u001b[33m")
 print('         《"""""""""""""""""""""""""""""""""""""""""""》')
 print("         《    CYB3RMX_ PROGRAMMING & CYBERSECURITY   》")
 print("         《       ~~~~~MX Security Corporation~~~~~   》")
-print("         《                  IP TOOLS                 》")
+print("         《          IP AND SECURITY AUDIT TOOL       》")
 print('         《___________________________________________》')
+print("                \u001b[36m●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●")
+print("                ●[*] IP TOOLS COLORED BLUE     ●")
+print("                ●[*] SECURITY TOOLS COLORED RED●")
+print("                ●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●")
 print("\u001b[37m///////////////////////////////////////")
-print("[1]---------{ PING }")
+print("\u001b[34m[1]---------{ PING }")
 print("[2]---------{ NETSTAT }")
 print("[3]---------{ WHOIS }")
 print("[4]---------{ NSLookup }")
 print("[5]---------{ ARP }")
 print("[6]---------{ DOMAIN TO IP ADDRESS }")
 print("[7]---------{ TRACEROUTE }")
-print("[8]---------{ NMAP }")
-print("[9]---------{ TELNET CONNECTION }")
-print("[10]--------{ HYDRA PASSWORD CRACKER }")
-print("[154]--------{ UPDATE IP-TOOLS }")
+print("\u001b[31m[8]---------{ NMAP }")
+print("\u001b[34m[9]---------{ TELNET CONNECTION }")
+print("\u001b[31m[10]--------{ HYDRA PASSWORD CRACKER }")
+print("[11]--------{ GOOGLE DORKING }")
+print("\u001b[37m[154]-------{ UPDATE IP-TOOLS }")
 print("///////////////////////////////////////")
 ipx = socket.gethostbyname(socket.gethostname())
 time = time.asctime()
@@ -116,6 +121,13 @@ hydra = '''
 8ooooo8    88    8     8 8888888  8_____8
 8     8    88    8     8 8   8    8"""""8
 8     8    88    888888  8    8   8     8
+'''
+google = '''
+888888  888888 8888888  8    8 88 888    88 88888888
+8     8 8    8 8      8 8   8  88 88 8   88 88
+8     8 8    8 8888888  8888   88 88  8  88 88 88888
+8     8 8    8 8   8    8   8  88 88   8 88 88     8
+888888  888888 8    8   8    8 88 88    888 88888888
 '''
 update = '''
 88    88 888888  888888  8888888 88888888 8888888
@@ -351,6 +363,48 @@ elif select == 10:
     if ret12 == 1:
         os.system('clear')
         os.system('python IPTools.py')
+elif select == 11:
+    os.system('clear')
+    print("\u001b[33m")
+    print(google)
+    print("■■■■■■■■■■■■■■■■■■■■■■■■■")
+    print("[1] SQL DUMP SEARCH")
+    print("[2] CREATE YOU OWN DORK")
+    print("[3] INDEX OF ADMIN")
+    print("[4] SQL VULNERABILITY DORK")
+    print("■■■■■■■■■■■■■■■■■■■■■■■■■")
+    select = int(input("CHOOSE: "))
+    if select == 1:
+      url = '# Dumping data for table(user|username|users|password)'
+      webbrowser.open_new(url)
+      retg = int(input("PROCESS COMPLETED RETURN BACK [1/0]?: "))
+      if retg == 1:
+        os.system('clear')
+        os.system('python IPTools.py')
+      elif select == 2:
+          dork = str(input("\u001b[35mWRITE YOUR DORK: "))
+          urlq = 'www.google.com/search?q='+dork
+          webbrowser.open_new(urlq)
+          retgg = int(input("PROCESS COMPLETED RETURN BACK [1/0]?: "))
+          if retgg == 1:
+            os.system('clear')
+            os.system('python IPTools.py')
+      elif select == 3:
+          index = 'https://www.google.com/search?q=index+of/admin'
+          webbrowser.open_new(index)
+          retggg = int(input("PROCESS COMPLETED RETURN BACK [1/0]?: "))
+          if retggg == 1:
+            os.system('clear')
+            os.system('python IPTools.py')
+      elif select == 4:
+          vuln = 'https://www.google.com/search?q=index.php?id='
+          webbrowser.open_new(vuln)
+          retg4 = int(input("PROCESS COMPLETED RETURN BACK [1/0]?: "))
+          if retg4 == 1:
+            os.system('clear')
+            os.system('python IPTools.py')
+      else:
+         print("\u001b[31mYOU SELECTED WRONG OPTION!!")
 elif select == 154:
     print(update)
     print("\u001b[32m[*] UPDATING IP-Tools...")
