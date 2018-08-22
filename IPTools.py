@@ -3,6 +3,18 @@
 import os,socket,telnetlib,time
 from telnetlib import Telnet
 os.system('clear')
+print("[!] FIRST YOU NEED TO DOWNLOAD NMAP AND HYDRA...")
+print("[!] IF YOU ALREADY HAVE PRESS 0 TO CONTINUE...")
+down = int(input("DO YOU WANT TO DOWNLOAD [1/0] ?: "))
+if down == 1:
+  print("[*] DOWNLOAD STARTS...")
+  os.system('pkg install nmap')
+  os.system('pkg install hydra')
+  print("[*] DOWNLOAD COMPLETED...")
+elif down == 0:
+  os.system('clear')
+else:
+  print("\u001b[31m[!] WRONG OPTION..")
 print("\u001b[32m")
 print("            ___ __   ______ ____ ____ __  ____  __")
 print("           / __|\ \ / /| _ )|__ (| _ \| \/ |\ \/ /")
@@ -255,8 +267,45 @@ elif select ==8:
     print("oooooooooooooooooooooooooooo")
     nmapsel = int(input("CHOOSE: "))
     if nmapsel == 1:
-        nmaptarget = str(input("WRITE TARGET: "))
-        os.system('nmap '+nmaptarget)
+        print("ooooooooooooooooooooooooooooooo")
+        print("[1] 192.168.0.0/24")
+        print("[2] 192.168.1.0/24")
+        print("[3] 192.168.2.0/24")
+        print("[4] 192.168.43.0/24 (For mobile networks)")
+        print("ooooooooooooooooooooooooooooooo")
+        network = int(input("SELECT YOUR NETWORK: "))
+        if network == 1:
+          os.system('nmap 192.168.0.0/24')
+          nret = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
+          if nret == 1:
+            os.system('clear')
+            os.system('python IPTools.py')
+          else:
+            print("\u001b[31m[!] WRONG OPTION..")
+        elif network == 2:
+            os.system('nmap 192.168.1.0/24')
+            nret1 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
+            if nret1 == 1:
+              os.system('clear')
+              os.system('python IPTools.py')
+            else:
+              print("\u001b[31m[!] WRONG OPTION..")
+        elif network == 3:
+            os.system('nmap 192.168.2.0/24')
+            nret2 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
+            if nret2 == 1:
+              os.system('clear')
+              os.system('python IPTools.py')
+            else:
+              print("\u001b[31m[!] WRONG OPTION..")
+        elif network == 4:
+            os.system('nmap 192.168.43.0/24')
+            nret3 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
+            if nret3 == 1:
+              os.system('clear')
+              os.system('python IPTools.py')
+            else:
+              print("\u001b[31m[!] WRONG OPTION..")
         ret8 = int(input("RETURN BACK TO MAIN MENU [1/0]?: "))
         if ret8 == 1:
             os.system('clear')
