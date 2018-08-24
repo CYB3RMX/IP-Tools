@@ -383,34 +383,34 @@ elif select == 11:
     print("■■■■■■■■■■■■■■■■■■■■■■■■■")
     select = int(input("CHOOSE: "))
     if select == 1:
-      url = '# Dumping data for table(user|username|users|password)'
+      url = 'https://www.google.com/search?q=%23Dumping+data+for+table(username%7Cuser%7Cusers%7Cpassword)&oq=%23Dumping&aqs=chrome.0.69i59j69i57j0l2.8416j0j4&client=ms-android-samsung&sourceid=chrome-mobile&ie=UTF-8'
       webbrowser.open_new(url)
       retg = int(input("PROCESS COMPLETED RETURN BACK [1/0]?: "))
       if retg == 1:
         os.system('clear')
         os.system('python IPTools.py')
-      elif select == 2:
-          dork = str(input("\u001b[35mWRITE YOUR DORK: "))
-          urlq = 'www.google.com/search?q='+dork
-          webbrowser.open_new(urlq)
-          retgg = int(input("PROCESS COMPLETED RETURN BACK [1/0]?: "))
-          if retgg == 1:
-            os.system('clear')
-            os.system('python IPTools.py')
-      elif select == 3:
-          index = 'https://www.google.com/search?q=index+of/admin'
-          webbrowser.open_new(index)
-          retggg = int(input("PROCESS COMPLETED RETURN BACK [1/0]?: "))
-          if retggg == 1:
-            os.system('clear')
-            os.system('python IPTools.py')
-      elif select == 4:
-          vuln = 'https://www.google.com/search?q=index.php?id='
-          webbrowser.open_new(vuln)
-          retg4 = int(input("PROCESS COMPLETED RETURN BACK [1/0]?: "))
-          if retg4 == 1:
-            os.system('clear')
-            os.system('python IPTools.py')
+    elif select == 2:
+      dork = str(input("\u001b[35mWRITE YOUR DORK: "))
+      urlq = 'www.google.com/search?q='+dork
+      webbrowser.open_new(urlq)
+      retgg = int(input("PROCESS COMPLETED RETURN BACK [1/0]?: "))
+      if retgg == 1:
+        os.system('clear')
+        os.system('python IPTools.py')
+    elif select == 3:
+      index = 'https://www.google.com/search?q=index+of/admin'
+      webbrowser.open_new(index)
+      retggg = int(input("PROCESS COMPLETED RETURN BACK [1/0]?: "))
+      if retggg == 1:
+        os.system('clear')
+        os.system('python IPTools.py')
+    elif select == 4:
+      vuln = 'https://www.google.com/search?q=index.php?id='
+      webbrowser.open_new(vuln)
+      retg4 = int(input("PROCESS COMPLETED RETURN BACK [1/0]?: "))
+      if retg4 == 1:
+        os.system('clear')
+        os.system('python IPTools.py')
       else:
          print("\u001b[31mYOU SELECTED WRONG OPTION!!")
 elif select == 154:
